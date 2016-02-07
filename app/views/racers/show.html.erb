@@ -1,0 +1,34 @@
+<div class = "center jumbotron">
+<h1>Number: <%= @racer.number %> </h1>
+</div>
+
+<div class = "container">
+<h1>
+
+<p>
+ <b>First name:	</b>
+  <%= @racer.first_name %>
+</p>
+
+<p>
+<b>Last name:	</b>
+  <%= @racer.last_name %>
+</p>
+
+<p>
+ <b>Gender:	</b>
+  <%= @racer.gender %>
+</p>
+
+<p>
+<b>Group:	</b>
+  <%= @racer.group %>
+</p>
+
+<p>
+  <b>Secs:	</b>
+  <%= @racer.secs %>
+</p></h1>
+
+<div class="number"><%= link_to 'Edit', edit_racer_path(@racer) %> |
+<%= link_to 'Back', racers_path %></div>

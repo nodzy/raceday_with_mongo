@@ -1,0 +1,43 @@
+<div class = "center jumbotron">
+<h1>Listing Racers </h1>
+</div>
+
+<div class = "container">
+
+<div class="number"><%= link_to 'New Racer', new_racer_path %></div>
+<%= will_paginate @racers %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Gender</th>
+      <th>Group</th>
+      <th>Secs</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @racers.each do |racer| racer=toRacer(racer) %>
+<tr class=<%= cycle('even', 'odd') %>>
+      <tr>
+        <td><%= racer.number %></td>
+        <td><%= racer.first_name %></td>
+        <td><%= racer.last_name %></td>
+        <td><%= racer.gender %></td>
+        <td><%= racer.group %></td>
+        <td><%= racer.secs %></td>
+        <td><%= link_to 'Show', racer %></td>
+        <td><%= link_to 'Edit', edit_racer_path(racer) %></td>
+        <td><%= link_to 'Destroy', racer, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @racers %>
+
+<br>
+
+
